@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- jsTree CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/themes/default/style.min.css" />
+	<!-- jsTree JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.12/jstree.min.js"></script>
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>test</title>
+</head>
+<body>
+	<div>
+    <h1>Represent HTML and JSON Data in Tree Structure Using jsTree</h1>
+    <!-- Container to show tree views -->
+    <div id="tree-view-container">
+        <!-- Container to show tree view from HTML -->
+        <div class="tree-view-container-item">
+            <h2>Tree View from HTML Content</h2>
+            <!-- Tree View Element -->
+            <div id="tree-view-from-html">
+                <ul>
+                    <li>
+                        Node 1
+                        <ul>
+                            <li>Node 1.1</li>
+                            <li>Node 1.2</li>
+                            <li>Node 1.3</li>
+                            <li>Node 1.4</li>
+                            <li>Node 1.5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Node 2
+                        <ul>
+                            <li>Node 2.1</li>
+                            <li>Node 2.2</li>
+                            <li>Node 2.3</li>
+                            <li>Node 2.4</li>
+                            <li>Node 2.5</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Node 3
+                        <ul>
+                            <li>Node 3.1</li>
+                            <li>Node 3.2</li>
+                            <li>Node 3.3</li>
+                            <li>Node 3.4</li>
+                            <li>Node 3.5</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Container to show tree view from JSON -->
+        <div class="tree-view-container-item">
+            <h2>Tree View from JSON Content</h2>
+            <!-- Tree View Element -->
+            <div id="tree-view-from-json"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+	/**
+ * Check if the page content has been loaded completely.
+ */
+$(function () {
+    /**
+     * Initialize the jsTree instance on the HTML content.
+     * Display the tree view.
+     */
+    $("#tree-view-from-html").jstree();
+    /**
+     * Initialize the jsTree instance to create tree view
+     * out of JSON content.
+     */
+    $("#tree-view-from-json").jstree({
+        core: {
+            /**
+             * Add the JSON content inside the "data" attribute.
+             */
+            data: [
+                {
+                    text: "JSON Node 1",
+                    state: {
+                        opened: true,
+                    },
+                    children: [
+                        {
+                            text: "JSON Node 1.1",
+                        },
+                        {
+                            text: "JSON Node 1.2",
+                        },
+                        {
+                            text: "JSON Node 1.3",
+                        },
+                        {
+                            text: "JSON Node 1.4",
+                        },
+                        {
+                            text: "JSON Node 1.5",
+                        },
+                    ],
+                },
+                {
+                    text: "JSON Node 2",
+                    state: {
+                        opened: true,
+                    },
+                    children: [
+                        {
+                            text: "JSON Node 2.1",
+                        },
+                        {
+                            text: "JSON Node 2.2",
+                        },
+                        {
+                            text: "JSON Node 2.3",
+                        },
+                        {
+                            text: "JSON Node 2.4",
+                        },
+                        {
+                            text: "JSON Node 2.5",
+                        },
+                    ],
+                },
+            ],
+        },
+    });
+});
+
+</script>
+</body>
+</html>
